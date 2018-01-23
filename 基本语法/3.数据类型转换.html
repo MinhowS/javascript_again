@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数据类型转换</title>
+</head>
+<body>
+<p>1.强制转换</p>
+Boolean()
+<p>
+    Boolean函数可以将任意类型的值转为布尔值。
+
+    它的转换规则相对简单：除了以下五个值的转换结果为false，其他的值全部为true。
+
+    undefined
+    null
+    -0或+0
+    NaN
+    ''（空字符串）
+    Boolean(undefined) // false
+    Boolean(null) // false
+    Boolean(0) // false
+    Boolean(NaN) // false
+    Boolean('') // false
+</p>
+所有对象的布尔值都是true
+Boolean({}) // true
+Boolean([]) // true
+Boolean(new Boolean(false)) // true
+
+<p>2.自动转换</p>
+自动转换是以强制转换为基础的。
+遇到下面的三种情况，JavaScript会自动转换数据类型，即转换是自动完成的，用户不可见。
+一、不同类型的数据互相计算。
+123 + 'abc' //'123abc'
+二、对非布尔值类型的数据求布尔值
+if('abc'){
+console.log('hello')
+}//"hello"
+<p>
+    自动转换为字符串
+        主要是加法运算
+    自动转换为数值
+        除了加法运算外，其他运算符都会把 运算子自动转成数值
+</p>
+</body>
+</html>
