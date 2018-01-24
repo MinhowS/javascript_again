@@ -66,6 +66,7 @@ TypeError对象是变量或参数不是预期类型时发生的错误。比如�
 URIError对象是URI相关函数的参数不正确时抛出的错误，主要涉及encodeURI() decodeURI() encodeURIComponent() decodeURIComponent() escape() unescape()这六个函数。
 <p>decodeURI('%2')
     // URIError: URI malformed</p>
-
+<p>2.6 EvalError对象</p>
+eval函数没有被正确执行时，会抛出EvalError错误。该错误类型已经不再使用了，只是为了保证与以前代码兼容，才继续保留。
 </body>
 </html>
