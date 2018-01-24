@@ -44,5 +44,12 @@ ReferenceError对象是引用一边儿不存在的变量时发生的错误。<br
     // ReferenceError: Invalid left-hand side in assignment
 </p>
 上面代码对函数console.log的运行结果和this赋值，结果都引发了ReferenceError错误。
+<p>2.3  RangeError对象</p>
+RangeError对象是一个值超出有效范围时发生的错误。主要有几种情况，一是数组长度为负数，二是Number对象的方法参数超出范围，以及函数堆栈超过最大值。
+<p>
+    // 数组长度不得为负数
+    new Array(-1)
+    // Uncaught RangeError: Invalid array length
+</p>
 </body>
 </html>
