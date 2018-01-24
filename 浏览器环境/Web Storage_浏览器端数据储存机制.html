@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*检测浏览器是否支持sessionStorage和localStorage*/
+    function checkStorageSupport() {
+        //sessionStorage
+        if (window.sessionStorage) {
+            return true;
+        } else {
+            return false;
+        }
+        //localStorage
+        if (window.localStorage) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    //存入/读取数据
+    //存入
+    sessionStorage.setItem("key","value");
+    localStorage.setItem("key","value");
+    //读取
+    sessionStorage.getItem("key");
+    localStorage.getItem("key");
+
+    //清除数据
+        //removeItem方法用于清除某个键名对应的数据
+    sessionStorage.removeItem("key");
+    localStorage.removeItem("key");
+        //clear方法用于清除所有保存的数据
+    sessionStorage.clear();
+    localStorage.clear();
+
+    //便利操作
+    //利用length属性和key方法，可以遍历所有的键
+    for (var i = 0; i < localStorage.length; i++) {
+        console.log(localStorage.key(i));
+    }
+</script>
+</body>
+</html>
