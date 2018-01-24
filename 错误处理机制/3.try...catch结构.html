@@ -22,5 +22,57 @@
 
     如果你不确定某些代码是否会报错，就可以把它们放在try...catch代码块之中，便于进一步对错误进行处理。
 </p>
+<p>
+    try {
+    f();
+    } catch(e) {
+    // 处理错误
+    }
+    上面代码中，如果函数f执行报错，就会进行catch代码块，接着对错误进行处理。
+
+    catch代码块捕获错误之后，程序不会中断，会按照正常流程继续执行下去。
+</p>
+<p>
+    try {
+    throw "出错了";
+    } catch (e) {
+    console.log(111);
+    }
+    console.log(222);
+    // 111
+    // 222
+    上面代码中，try代码块抛出的错误，被catch代码块捕获后，程序会继续向下执行。
+</p>
+<p>
+    catch代码块之中，还可以再抛出错误，甚至使用嵌套的try...catch结构。
+
+    var n = 100;
+
+    try {
+    throw n;
+    } catch (e) {
+    if (e <= 50) {
+    // ...
+    } else {
+    throw e;
+    }
+    }
+    // Uncaught 100
+    上面代码中，catch代码之中又抛出了一个错误。
+
+    为了捕捉不同类型的错误，catch代码块之中可以加入判断语句。
+
+    try {
+    foo.bar();
+    } catch (e) {
+    if (e instanceof EvalError) {
+    console.log(e.name + ": " + e.message);
+    } else if (e instanceof RangeError) {
+    console.log(e.name + ": " + e.message);
+    }
+    // ...
+    }
+    上面代码中，catch捕获错误之后，会判断错误类型（EvalError还是RangeError），进行不同的处理。
+</p>
 </body>
 </html>
