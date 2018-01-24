@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <p>在浏览器中，window对象指当前的浏览器窗口。它是所有对象的顶层对象。</p>
+<p>“顶层对象”指的是最高一层的对象，所有其他对象都是它的下属。JavaScript规定，浏览器环境的所有全局变量，都是window对象的属性。</p>
+    <script>
+        var a = 1;
+        window.a;
+    </script>
+<p>window对象的window属性指向自身</p>
+    <script>
+        window.window == this;//true
+    </script>
+<p>window.location</p>
+<p>
+    window.location返回一个location对象，用于获取窗口当前的URL信息。它等同于document.location对象。
+</p>
+    <script>
+        window.location == document.location; //true
+    </script>
+<p>
+    navigator对象
+</p>
+<p>3.window对象的navigator属性，指向一个包含浏览器信息的对象</p>
+3.1 navigator.userAgent <br>
+navigator.userAgent属性返回浏览器的User-Agent字符串，标示浏览器的厂商和版本信息。<br>
+
+
+</body>
+</html>
