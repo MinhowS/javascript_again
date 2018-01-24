@@ -5,6 +5,75 @@
     <title>Title</title>
 </head>
 <body>
+<p>
+    try...catch结构允许在最后添加一个finally代码块，表示不管是否出现错误，都必须在最后运行的语句。
+</p>
+<p>
+    function cleansUp() {
+    try {
+    throw new Error('出错了……');
+    console.log('此行不会执行');
+    } finally {
+    console.log('完成清理工作');
+    }
+    }
 
+    cleansUp()
+    // 完成清理工作
+    // Error: 出错了……
+    </p>
+<p>
+    上面代码中，由于没有catch语句块，所以错误没有捕获。执行finally代码块以后，程序就中断在错误抛出的地方。
+</p>
+<p>
+    function idle(x) {
+    try {
+    console.log(x);
+    return 'result';
+    } finally {
+    console.log("FINALLY");
+    }
+    }
+
+    idle('hello')
+    // hello
+    // FINALLY
+    // "result"
+    上面代码说明，try代码块没有发生错误，而且里面还包括return语句，但是finally代码块依然会执行。注意，只有在其执行完毕后，才会显示return语句的值。
+
+    下面的例子说明，return语句的执行是排在finally代码之前，只是等finally代码执行完毕后才返回。
+
+    var count = 0;
+    function countUp() {
+    try {
+    return count;
+    } finally {
+    count++;
+    }
+    }
+
+    countUp()
+    // 0
+    count
+    // 1
+    上面代码说明，return语句的count的值，是在finally代码块运行之前就获取了。
+
+    下面是finally代码块用法的典型场景。
+
+    openFile();
+
+    try {
+    writeFile(Data);
+    } catch(e) {
+    handleError(e);
+    } finally {
+    closeFile();
+    }
+    上面代码首先打开一个文件，然后在try代码块中写入文件，如果没有发生错误，则运行finally代码块关闭文件；一旦发生错误，则先使用catch代码块处理错误，再使用finally代码块关闭文件。
+
+</p>
+<p>
+    
+</p>
 </body>
 </html>
