@@ -5,6 +5,43 @@
     <title>Title</title>
 </head>
 <body>
+<p>
+    throw语句的作用是手动中断程序执行，抛出一个错误。
+</p>
+<p>
+    throw也可以抛出自定义错误。
 
+    function UserError(message) {
+    this.message = message || '默认信息';
+    this.name = 'UserError';
+    }
+
+    throw new UserError('出错了！');
+    // Uncaught UserError {message: "出错了！", name: "UserError"}
+    上面代码中，throw抛出的是一个UserError实例。
+
+<h3>实际上，throw可以抛出任何类型的值。也就是说，它的参数可以是任何值。</h3>
+
+    // 抛出一个字符串
+    throw 'Error！';
+    // Uncaught Error！
+
+    // 抛出一个数值
+    throw 42;
+    // Uncaught 42
+
+    // 抛出一个布尔值
+    throw true;
+    // Uncaught true
+
+    // 抛出一个对象
+    throw {
+    toString: function () {
+    return 'Error!';
+    }
+    };
+    // Uncaught {toString: ƒ}
+<h3>对于 JavaScript 引擎来说，遇到throw语句，程序就中止了。引擎会接收到throw抛出的信息，可能是一个错误实例，也可能是其他类型的值。</h3>
+</p>
 </body>
 </html>

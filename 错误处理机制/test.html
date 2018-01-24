@@ -7,18 +7,10 @@
 <body>
 
 <script>
-    var count = 0;
-    function countUp() {
-        try {
-            return count;
-        } finally {
-            console.log(1);
-        }
+    var x = -9;
+    if (x < 0) {
+        throw new Error('x 必须为正数');
     }
-
-    countUp()
-    // 0
-    count
 </script>
 </body>
 </html>
