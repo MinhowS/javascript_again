@@ -26,5 +26,23 @@ SyntaxError对象是解析代码时发生的语法错误。<br>
     console.log 'hello');
     // Uncaught SyntaxError: Unexpected string
 </script>
+<p>2.2 ReferenceError对象</p>
+ReferenceError对象是引用一边儿不存在的变量时发生的错误。<br>
+<p>
+    // 使用一个不存在的变量
+    unknownVariable
+    // Uncaught ReferenceError: unknownVariable is not defined
+</p>
+另一种触发场景是，将一个值分配给无法分配的对象，比如函数的运行结果或者this赋值。<br>
+<p>
+    // 等号左侧不是变量
+    console.log() = 1
+    // Uncaught ReferenceError: Invalid left-hand side in assignment
+
+    // this 对象不能手动赋值
+    this = 1
+    // ReferenceError: Invalid left-hand side in assignment
+</p>
+上面代码对函数console.log的运行结果和this赋值，结果都引发了ReferenceError错误。
 </body>
 </html>
