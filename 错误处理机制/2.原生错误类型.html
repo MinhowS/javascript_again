@@ -62,5 +62,10 @@ TypeError对象是变量或参数不是预期类型时发生的错误。比如�
     // Uncaught TypeError: obj.unknownMethod is not a function
 </p>
 场面代码的第二种情况，调用对象不存在的方法，也会抛出TypeError错误，因为obj.unknownMethod的值是undefined，而不是一个函数。
+<p>2.5 URIError对象</p>
+URIError对象是URI相关函数的参数不正确时抛出的错误，主要涉及encodeURI() decodeURI() encodeURIComponent() decodeURIComponent() escape() unescape()这六个函数。
+<p>decodeURI('%2')
+    // URIError: URI malformed</p>
+
 </body>
 </html>
