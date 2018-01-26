@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //如果同时采用function命令和赋值语句声明同一个函数，最后总是采用赋值语句的定义。
+    var f = function () {
+        console.log('1');
+    };
+
+    function f() {
+        console.log('2');
+    }
+
+    f();// 1
+
+</script>
+</body>
+</html>
