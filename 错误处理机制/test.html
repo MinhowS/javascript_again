@@ -15,6 +15,18 @@
         console.log(w);
     }
     c(322);
+   (function (flag = true) {
+       if (!flag) {
+           return;
+       }
+       class Animal {
+           constructor(name){
+               this.name = name;
+           }
+       };
+       let test = new Animal('Tom');
+       console.log(test.name);
+   })(1);
 </script>
 </body>
 </html>
