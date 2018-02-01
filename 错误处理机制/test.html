@@ -27,6 +27,12 @@
        let test = new Animal('Tom');
        console.log(test.name);
    })(1);
+   (function (flag = true) {
+       if (!flag) {
+           return;
+       }
+       console.log('为什么我这么菜？不会实际运用知识呢。到底是哪里出了问题，无法集中注意力。')
+   })(1);
 </script>
 </body>
 </html>
