@@ -135,6 +135,17 @@
         console.log(['a',, 'b'].join('-'));//a--b
     })(0);
 </script>
+<p>通过call方法，这个方法也可用于字符串或者类数组对象。</p>
+<script>
+    (function (flag = true) {
+        if (!flag) {
+            return;
+        }
+        console.log(Array.prototype.join.call('hello', '-'));//"h-e-l-l-o"
+        console.log(Array.prototype.join.call({0: 5, 1: 6, 2: 7, 3: 8, 4: 9}, '-'));//""
+        console.log(Array.prototype.join.call({0: 5, 1: 6, 2: 7, 3: 8, 4: 9, length: 5}, '-'));//"5-6-7-8-9"
+    })(0);
+</script>
 <h3>concat()</h3>
 <p>concat方法用于多个数组的合并。它将新数组的成员，添加到原数组成员的后部，然后返回一个新数组，原数组不变。</p>
 <script>
